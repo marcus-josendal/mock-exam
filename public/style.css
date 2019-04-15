@@ -1,0 +1,58 @@
+.headline-login {
+    font-size: 2.5rem;
+    align-self: center;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-field[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+.input-field[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+}
+
+.input-field[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu-items-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menu-item {
+}
