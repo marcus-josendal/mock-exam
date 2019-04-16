@@ -68,7 +68,10 @@ export class AddMenuItem extends React.Component {
             return false;
         }
 
-        return response.status === 201
+        if(response.status === 201) {
+            this.props.history.push("/")
+            return true
+        }
     }
 
 
