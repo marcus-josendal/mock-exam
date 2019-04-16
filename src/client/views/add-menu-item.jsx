@@ -36,9 +36,39 @@ export class AddMenuItem extends React.Component {
         })
     }
 
-    addDish = (dishName, allergies, ingredients, price) => {
-        const allergiesList = convertToArray(allergies)
-        const ingredientsList = convertToArray(ingredients)
+    convertToArray(array) {
+        return array.trim().split(",")
+    }
+
+    addDish = async (dishName, ingredients, allergies, price) => {
+        const allergiesList = this.convertToArray(allergies)
+        const ingredientsList = this.convertToArray(ingredients)
+
+        if(dishName.length === 0 || ingredients.length === 0 || allergies.length === 0 || price.toString().length === 0) {
+            alert("Fill in all fields please!")
+            return false
+        }
+
+        const url = "/api/cafeteriaMenu"
+        const payload = {dishName, ingredientsList, allergiesList, price}
+        let response
+        console.log(payload)
+
+
+        try {
+            response = await fetch(url, {
+                method: "post",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+        } catch (err) {
+            alert("Something went wrong")
+            return false;
+        }
+
+        return response.status === 201
     }
 
 
@@ -59,8 +89,8 @@ export class AddMenuItem extends React.Component {
                 <input className={"input-field"} type="text" value={this.state.price} onChange={value => this.updateDishPrice(value)}/>
                 <button onClick={() => this.addDish(
                     this.state.dishName,
-                    this.state.allergies,
                     this.state.ingredients,
+                    this.state.allergies,
                     this.state.price,
                 )}>Add dish!</button>
             </div>

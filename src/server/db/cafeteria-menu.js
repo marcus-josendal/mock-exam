@@ -58,6 +58,19 @@ function getOneMenu () {
     return null
 }
 
+function addMenuItem(name, ingredients, allergies, price) {
+    const item = {
+        id: cafeteriaMenu.length,
+        dish: name,
+        ingredients: ingredients,
+        allergies: allergies,
+        price: price
+    }
+
+    cafeteriaMenu.push(item)
+    return cafeteriaMenu.length
+}
+
 function deleteMenuItem(id) {
     let newMenu = []
 
@@ -70,4 +83,4 @@ function deleteMenuItem(id) {
 }
 
 
-module.exports = { getMenu, getOneMenu, deleteMenuItem }
+module.exports = { getMenu, getOneMenu, deleteMenuItem, addMenuItem }
