@@ -1,6 +1,6 @@
 
 
-cafeteriaMenu = [
+let cafeteriaMenu = [
     {
         id: 0,
         dish: "Pepperoni Pizza",
@@ -51,11 +51,23 @@ cafeteriaMenu = [
 ]
 
 function getMenu() {
-    return this.cafeteriaMenu
+    return cafeteriaMenu
 }
 
 function getOneMenu () {
     return null
 }
 
-module.exports = { getMenu, getOneMenu }
+function deleteMenuItem(id) {
+    let newMenu = []
+
+    cafeteriaMenu.map(menuItem => {
+        if(menuItem.id.toString() !== id) newMenu.push(menuItem)
+    })
+
+    cafeteriaMenu = newMenu
+    return true
+}
+
+
+module.exports = { getMenu, getOneMenu, deleteMenuItem }

@@ -4,6 +4,7 @@ import Home from './views/home'
 import Login from './views/login'
 import SignUp from './views/signup'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import AddMenuItem from "./views/add-menu-item";
 
 class App extends React.Component {
 
@@ -88,6 +89,7 @@ class App extends React.Component {
                         <Route exact path="/signup"
                                render={props => <SignUp {...props}
                                                         fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/>}/>
+                        <Route exact path="/add_menu_item" component={AddMenuItem}/>
                         <Route component={this.notFound}/>
                     </Switch>
                 </div>

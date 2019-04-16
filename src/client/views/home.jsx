@@ -49,7 +49,8 @@ class Home extends React.Component {
     }
 
     deleteMenuItem = async(id) => {
-        const url = "api/cafeteriaMenu"
+        const url = "/api/cafeteriaMenu/" + id
+        console.log(url)
 
         let response
 
@@ -91,11 +92,14 @@ class Home extends React.Component {
         this.props.history.push("/");
     }
 
-    loggedIn(userId) {
+    loggedIn() {
         return (
             <div>
-                <h3>Welcome { this.props.userId}</h3>
-                <button onClick={this.doLogout}>Logout</button>
+                <h3>Welcome { this.props.userId }</h3>
+                <button onClick={ this.doLogout }>Logout</button>
+                <Link to="/add_menu_item">
+                    <button>Add Menu Item</button>
+                </Link>
             </div>
         )
     }
@@ -115,6 +119,7 @@ class Home extends React.Component {
     render() {
         let menu
         let authContent
+        const userId = this.props.userId
         if (this.state.error !== null) {
             menu = <p> There is something wrong with the server </p>
         } else if (this.state.menu === null || this.state.menu.length === 0) {
@@ -141,11 +146,18 @@ class Home extends React.Component {
                     </p>
                     <h4>Price: </h4>
                     <p>{menuItem.price}</p>
-                    <button onClick={_ => this.deleteMenuItem(menuItem.id)}>Delete</button>
-                    <button>Edit</button>
+                    {userId ? (
+                        <div>
+                            <button onClick={_ => this.deleteMenuItem(menuItem.id)}>Delete</button>
+                            <button>Edit</button>
+                        </div>
+                    ): (
+                        <p>
+                            <b>Login to edit this dish</b>
+                        </p>
+                    )}
                 </div>
             })
-            const userId = this.props.userId
             if (!userId) {
                 authContent = this.notLoggedIn()
             } else {
