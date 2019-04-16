@@ -1,15 +1,18 @@
 import React from "react";
 
-export class AddMenuItem extends React.Component {
+export class EditMenuItem extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            dishName: '',
-            allergies: '',
-            ingredients: '',
-            price: '',
+            menuItem: null,
         }
+    }
+
+    componentDidMount () {
+        this.getDish().then(data => {
+            console.log(data)
+        })
     }
 
     updateDishName(value) {
@@ -40,7 +43,31 @@ export class AddMenuItem extends React.Component {
         return array.trim().split(",")
     }
 
-    addDish = async (dishName, ingredients, allergies, price) => {
+    getDish = async () => {
+        const url = "/api/cafeteriaMenu/" + this.props.match.params.id
+
+        let response
+        let payload
+
+        try {
+            response = await fetch(url)
+            payload = await response.json()
+        } catch (e) {
+            alert("Something broke" + response.status)
+        }
+        if (response.status === 200) {
+            this.setState({
+                menuItem: payload
+            })
+        } else {
+            console.log(3)
+            this.setState({
+                menuItem: null
+            })
+        }
+    }
+
+    updateDish = async (dishName, ingredients, allergies, price) => {
         const allergiesList = this.convertToArray(allergies)
         const ingredientsList = this.convertToArray(ingredients)
 
@@ -72,6 +99,8 @@ export class AddMenuItem extends React.Component {
         }
     }
 
+
+
     render() {
         return(
             <div>
@@ -79,23 +108,17 @@ export class AddMenuItem extends React.Component {
                 <input className={"input-field"} type="text" value={this.state.dishName} onChange={value => this.updateDishName(value)}/>
 
                 <p> List of Allergies - separate each ingredient with a comma as shown in box below. </p>
-                <textarea placeholder={"Lactose, Gluten, Mushroom"} className="big-input" value={this.state.allergies} onChange={value => this.updateAllergies(value)}/>
+                <textarea  className="big-input" value={this.state.allergies} onChange={value => this.updateAllergies(value)}/>
 
                 <p>List of Ingredients - separate each ingredient with a comma as shown in box below.</p>
                 <textarea placeholder={"Tomatoes, Beef, Cabbage"} className="big-input" value={this.state.ingredients} onChange={value => this.updateIngredients(value)}/>
 
                 <p>Dish Price</p>
                 <input className={"input-field"} type="text" value={this.state.price} onChange={value => this.updateDishPrice(value)}/>
-                <button onClick={() => this.addDish(
-                    this.state.dishName,
-                    this.state.ingredients,
-                    this.state.allergies,
-                    this.state.price,
-                )}>Add dish!</button>
+                <button onClick={() => this.updateDish()}>Edit dish!</button>
             </div>
         )
     }
 }
 
-export default AddMenuItem;
-
+export default EditMenuItem;

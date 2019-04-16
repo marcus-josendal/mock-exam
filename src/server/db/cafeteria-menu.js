@@ -54,8 +54,13 @@ function getMenu() {
     return cafeteriaMenu
 }
 
-function getOneMenu () {
-    return null
+function getOneMenuItem (id) {
+
+    let item = null
+    cafeteriaMenu.map(menuItem => {
+        if(menuItem.id.toString() === id) item = menuItem
+    })
+    return item
 }
 
 function addMenuItem(name, ingredients, allergies, price) {
@@ -83,4 +88,4 @@ function deleteMenuItem(id) {
 }
 
 
-module.exports = { getMenu, getOneMenu, deleteMenuItem, addMenuItem }
+module.exports = { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem }

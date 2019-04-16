@@ -5,13 +5,13 @@ import Login from './views/login'
 import SignUp from './views/signup'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import AddMenuItem from "./views/add-menu-item";
+import EditMenuItem from "./views/edit-menu-item";
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
 
-        //If user is null it is not logged in
         this.state = {
             user: null
         };
@@ -89,7 +89,8 @@ class App extends React.Component {
                         <Route exact path="/signup"
                                render={props => <SignUp {...props}
                                                         fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/>}/>
-                        <Route exact path="/add_menu_item" component={AddMenuItem}/>
+                        <Route exact path="/add-menu-item" component={AddMenuItem}/>
+                        <Route exact path="/edit-menu-item/:id" component={EditMenuItem}/>
                         <Route component={this.notFound}/>
                     </Switch>
                 </div>

@@ -5,7 +5,7 @@ const LocalStrategy = require('passport-local').Strategy
 const path = require('path');
 
 const express = require('express')
-const { getMenu, deleteMenuItem, addMenuItem } = require('./db/cafeteria-menu')
+const { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem } = require('./db/cafeteria-menu')
 const Users = require('./db/users');
 const authApi = require('./routes/auth-api')
 
@@ -59,6 +59,18 @@ app.use('/api', authApi)
 
 app.get('/api/cafeteriaMenu', (req, res) => {
     res.json(getMenu())
+})
+
+app.get('/api/cafeteriaMenu/:id', (req, res) => {
+    const menuItem = getOneMenuItem(req.params.id)
+    console.log(req.params.id)
+
+    if(menuItem === undefined || menuItem === null) {
+        res.status(404)
+        res.send()
+    } else {
+        res.json(menuItem)
+    }
 })
 
 app.delete('/api/cafeteriaMenu/:id', (req, res) => {

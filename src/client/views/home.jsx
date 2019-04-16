@@ -97,7 +97,7 @@ class Home extends React.Component {
             <div>
                 <h3>Welcome { this.props.userId }</h3>
                 <button onClick={ this.doLogout }>Logout</button>
-                <Link to="/add_menu_item">
+                <Link to="/add-menu-item">
                     <button>Add Menu Item</button>
                 </Link>
             </div>
@@ -149,7 +149,9 @@ class Home extends React.Component {
                     {userId ? (
                         <div>
                             <button onClick={_ => this.deleteMenuItem(menuItem.id)}>Delete</button>
-                            <button>Edit</button>
+                            <Link to={"/edit-menu-item/" + menuItem.id}>
+                                <button>Edit</button>
+                            </Link>
                         </div>
                     ): (
                         <p>
