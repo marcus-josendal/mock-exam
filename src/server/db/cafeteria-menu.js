@@ -78,14 +78,33 @@ function addMenuItem(name, ingredients, allergies, price) {
 
 function deleteMenuItem(id) {
     let newMenu = []
-
+    let i = 0
     cafeteriaMenu.map(menuItem => {
-        if(menuItem.id.toString() !== id) newMenu.push(menuItem)
+        if(menuItem.id.toString() !== id){
+            menuItem.id = i
+            i++
+            newMenu.push(menuItem)
+        }
     })
 
+    console.log(newMenu)
     cafeteriaMenu = newMenu
     return true
 }
 
+function updateMenuItem(item) {
 
-module.exports = { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem }
+
+    cafeteriaMenu[item.id] = {
+        id: item.id,
+        dish: item.dishName,
+        ingredients: item.ingredientsList,
+        allergies: item.allergiesList,
+        price: item.price
+    }
+
+    return true;
+}
+
+
+module.exports = { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem, updateMenuItem }
