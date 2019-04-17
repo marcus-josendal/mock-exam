@@ -4,8 +4,9 @@ import Home from './views/home'
 import Login from './views/login'
 import SignUp from './views/signup'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import AddMenuItem from "./views/add-menu-item";
-import EditMenuItem from "./views/edit-menu-item";
+import AddMenuItem from "./views/add-menu-item"
+import EditMenuItem from "./views/edit-menu-item"
+import Chat from "./views/chat"
 
 class App extends React.Component {
 
@@ -18,10 +19,9 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.fetchAndUpdateUserInfo().then(() => {
-            console.log(this.state.user)
-        });
+        this.fetchAndUpdateUserInfo()
     }
+
 
 
     fetchAndUpdateUserInfo = async () => {
@@ -89,6 +89,8 @@ class App extends React.Component {
                         <Route exact path="/signup"
                                render={props => <SignUp {...props}
                                                         fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/>}/>
+                        <Route exact path="/chat" render={props => <Chat {...props}
+                                                                         user={this.state.user}/>}/>
                         <Route exact path="/add-menu-item" component={AddMenuItem}/>
                         <Route exact path="/edit-menu-item/:id" component={EditMenuItem}/>
                         <Route component={this.notFound}/>

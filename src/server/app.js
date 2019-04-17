@@ -3,13 +3,14 @@ const passport = require('passport')
 const session = require("express-session")
 const LocalStrategy = require('passport-local').Strategy
 const path = require('path');
-
 const express = require('express')
-const { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem } = require('./db/cafeteria-menu')
 const Users = require('./db/users');
 const authApi = require('./routes/auth-api')
-
 const app = express();
+const ews = require('express-ws')(app);
+const WebSocket = require('ws');
+const { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem } = require('./db/cafeteria-menu')
+
 app.use(bodyParser.json())
 
 app.use(session({
@@ -56,6 +57,29 @@ passport.deserializeUser(function (id, done) {
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/api', authApi)
+
+let counter = 0
+const messages = []
+
+app.ws('/', (ws, req) => {
+    console.log("Websocket connection established")
+
+    ws.send(JSON.stringify(messages))
+
+    ws.on('message', fromClient => {
+        const data = JSON.parse(fromClient)
+        const id = counter++
+        const msg = {id: id, author: data.author, text: data.text}
+
+        messages.push(msg)
+
+        ews.getWss().clients.foreach((client) => {
+            if(client.readyState === WebSocket.OPEN) {
+                client.send(JSON.stringify([msg]))
+            }
+        })
+    })
+})
 
 app.get('/api/cafeteriaMenu', (req, res) => {
     res.json(getMenu())
