@@ -73,7 +73,6 @@ export class SignUp extends React.Component {
         if(response.status === 201) {
             await this.props.fetchAndUpdateUserInfo()
             this.props.history.push("/")
-            console.log("Authed")
         }
     }
 }

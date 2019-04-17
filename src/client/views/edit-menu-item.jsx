@@ -6,13 +6,16 @@ export class EditMenuItem extends React.Component {
 
         this.state = {
             menuItem: null,
+            dishName: '',
+            ingredients: '',
+            allergies: '',
+            price: '',
+            error: null,
         }
     }
 
-    componentDidMount () {
-        this.getDish().then(data => {
-            console.log(data)
-        })
+    componentDidMount = () => {
+        this.getDish()
     }
 
     updateDishName(value) {
@@ -48,7 +51,6 @@ export class EditMenuItem extends React.Component {
 
         let response
         let payload
-
         try {
             response = await fetch(url)
             payload = await response.json()
@@ -57,32 +59,35 @@ export class EditMenuItem extends React.Component {
         }
         if (response.status === 200) {
             this.setState({
-                menuItem: payload
+                menuItem: payload,
+                error: null
             })
         } else {
-            console.log(3)
             this.setState({
-                menuItem: null
+                menuItem: null,
+                error: "Issue with HTTP connection: status code " + response.status
             })
         }
     }
 
+
     updateDish = async (dishName, ingredients, allergies, price) => {
         const allergiesList = this.convertToArray(allergies)
         const ingredientsList = this.convertToArray(ingredients)
+        const id = this.props.match.params.id
 
         if(dishName.length === 0 || ingredients.length === 0 || allergies.length === 0 || price.toString().length === 0) {
             alert("Fill in all fields please!")
             return false
         }
 
-        const url = "/api/cafeteriaMenu"
-        const payload = {dishName, ingredientsList, allergiesList, price}
+        const url = "/api/cafeteriaMenu/" + id
+        const payload = { id, dishName, ingredientsList, allergiesList, price}
         let response
 
         try {
             response = await fetch(url, {
-                method: "post",
+                method: "put",
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -92,8 +97,7 @@ export class EditMenuItem extends React.Component {
             alert("Something went wrong")
             return false;
         }
-
-        if(response.status === 201) {
+        if(response.status === 204) {
             this.props.history.push("/")
             return true
         }
@@ -102,31 +106,37 @@ export class EditMenuItem extends React.Component {
 
 
     render() {
+        if(this.state.error !== null){
+            return(
+                <div>
+                    <p>Cannot edit book. {this.state.error}</p>
+                </div>
+            );
+        }
+
+        if(this.state.menuItem === null){
+            return(<p>Loading...</p>)
+        }
+
         return(
             <div>
                 <p>Dish Name</p>
-                <input className={"input-field"} type="text" value={this.state.dishName} onChange={value => this.updateDishName(value)}/>
-
-                <p> List of Allergies - separate each ingredient with a comma as shown in box below. </p>
-                <textarea
-                    className="big-input"
-                    value={this.state.allergies}
-                    onChange={value => this.updateAllergies(value)}/>
+                <input className={"input-field"} type="text" placeholder={this.state.menuItem.dishName} value={this.state.dishName} onChange={value => this.updateDishName(value)}/>
 
                 <p>List of Ingredients - separate each ingredient with a comma as shown in box below.</p>
-                <textarea
-                    placeholder={"Tomatoes, Beef, Cabbage"}
-                    className="big-input"
-                    value={this.state.ingredients}
-                    onChange={value => this.updateIngredients(value)}/>
+                <textarea className="big-input" placeholder={this.state.menuItem.ingredients} value={this.state.ingredients} onChange={value => this.updateIngredients(value)}/>
+
+                <p>List of Allergies - separate each ingredient with a comma as shown in box below.</p>
+                <textarea  className="big-input" placeholder={this.state.menuItem.allergies} value={this.state.allergies} onChange={value => this.updateAllergies(value)}/>
 
                 <p>Dish Price</p>
-                <input
-                    className={"input-field"}
-                    type="text" value={this.state.price}
-                    onChange={value => this.updateDishPrice(value)}/>
-
-                <button onClick={() => this.updateDish()}>Edit dish!</button>
+                <input className={"input-field"} type="text" placeholder={this.state.menuItem.price} value={this.state.price} onChange={value => this.updateDishPrice(value)}/>
+                <button onClick={() => this.updateDish(
+                    this.state.dishName,
+                    this.state.ingredients,
+                    this.state.allergies,
+                    this.state.price,
+                )}>Edit dish!</button>
             </div>
         )
     }

@@ -4,12 +4,13 @@ const session = require("express-session")
 const LocalStrategy = require('passport-local').Strategy
 const path = require('path');
 const express = require('express')
+const { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem, updateMenuItem } = require('./db/cafeteria-menu')
 const Users = require('./db/users');
 const authApi = require('./routes/auth-api')
 const app = express();
 const ews = require('express-ws')(app);
 const WebSocket = require('ws');
-const { getMenu, deleteMenuItem, addMenuItem, getOneMenuItem } = require('./db/cafeteria-menu')
+
 
 app.use(bodyParser.json())
 
@@ -73,7 +74,7 @@ app.ws('/', (ws, req) => {
 
         messages.push(msg)
 
-        ews.getWss().clients.foreach((client) => {
+        ews.getWss().clients.forEach((client) => {
             if(client.readyState === WebSocket.OPEN) {
                 client.send(JSON.stringify([msg]))
             }
@@ -86,8 +87,8 @@ app.get('/api/cafeteriaMenu', (req, res) => {
 })
 
 app.get('/api/cafeteriaMenu/:id', (req, res) => {
+    console.log("get single item")
     const menuItem = getOneMenuItem(req.params.id)
-    console.log(req.params.id)
 
     if(menuItem === undefined || menuItem === null) {
         res.status(404)
@@ -98,6 +99,7 @@ app.get('/api/cafeteriaMenu/:id', (req, res) => {
 })
 
 app.delete('/api/cafeteriaMenu/:id', (req, res) => {
+    console.log("delete")
     const deleted = deleteMenuItem(req.params.id)
     if (deleted) {
         res.status(204);
@@ -116,6 +118,23 @@ app.post('/api/cafeteriaMenu', (req, res) => {
     res.header("location", "/api/cafeteriaMenu/" + id)
     res.send()
 })
+
+app.put('/api/cafeteriaMenu/:id', (req, res) => {
+    if(req.params.id !== req.body.id){
+        res.status(409);
+        res.send();
+        return;
+    }
+
+    const updated = updateMenuItem(req.body);
+
+    if (updated) {
+        res.status(204);
+    } else {
+        res.status(404);
+    }
+    res.send();
+});
 
 app.use((req, res, next) => {
     res.sendFile(path.resolve(__dirname, '..', '..', 'public', 'index.html'));

@@ -13,7 +13,6 @@ class Home extends React.Component {
 
     componentDidMount = () => {
         this.getMenu()
-        console.log(this.props.userId)
     }
 
 
