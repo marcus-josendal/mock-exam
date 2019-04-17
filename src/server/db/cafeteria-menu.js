@@ -86,8 +86,6 @@ function deleteMenuItem(id) {
             newMenu.push(menuItem)
         }
     })
-
-    console.log(newMenu)
     cafeteriaMenu = newMenu
     return true
 }

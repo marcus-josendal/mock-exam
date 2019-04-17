@@ -87,7 +87,6 @@ app.get('/api/cafeteriaMenu', (req, res) => {
 })
 
 app.get('/api/cafeteriaMenu/:id', (req, res) => {
-    console.log("get single item")
     const menuItem = getOneMenuItem(req.params.id)
 
     if(menuItem === undefined || menuItem === null) {
@@ -99,7 +98,6 @@ app.get('/api/cafeteriaMenu/:id', (req, res) => {
 })
 
 app.delete('/api/cafeteriaMenu/:id', (req, res) => {
-    console.log("delete")
     const deleted = deleteMenuItem(req.params.id)
     if (deleted) {
         res.status(204);
