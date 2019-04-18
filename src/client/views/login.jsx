@@ -13,16 +13,27 @@ export class Login extends React.Component {
 
     render () {
         return(
-            <div>
-                <h1>This is a login page</h1>
+            <div className={"sign-login-container"}>
+                <h1 className={"headline"}>Log in with your username and password</h1>
 
-                <p>Username: </p>
-                <input className={"input-field"} type="text" value={this.state.username} onChange={value => this.updateUserName(value)}/>
+                <h3 className={"align-left"}>Username: </h3>
+                <input
+                    className={"input-field"}
+                    type="text"
+                    value={this.state.username}
+                    onChange={value => this.updateUserName(value)}
+                />
 
-                <p>Password: </p>
-                <input className={"input-field"} type="password" value={this.state.pw} onChange={value => this.updatePassword(value)}/>
+                <h3 className={"align-left"}>Password: </h3>
+                <input
+                    className={"input-field"}
+                    type="password"
+                    value={this.state.pw}
+                    onChange={value => this.updatePassword(value)}
+                />
+
                 <p> {this.state.errorMsg} </p>
-               <button onClick={this.logIn}>Login</button>
+               <button className={"standard-button"} onClick={this.logIn}>Login</button>
             </div>
         );
     }

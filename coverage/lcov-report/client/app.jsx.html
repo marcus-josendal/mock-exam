@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for client/app.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">client</a> app.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/33</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React from "react";</span>
+<span class="cstat-no" title="statement not covered" >import ReactDOM from "react-dom";</span>
+<span class="cstat-no" title="statement not covered" >import Home from './views/home'</span>
+<span class="cstat-no" title="statement not covered" >import Login from './views/login'</span>
+<span class="cstat-no" title="statement not covered" >import SignUp from './views/signup'</span>
+<span class="cstat-no" title="statement not covered" >import { BrowserRouter, Route, Switch } from "react-router-dom"</span>
+<span class="cstat-no" title="statement not covered" >import AddMenuItem from "./views/add-menu-item"</span>
+<span class="cstat-no" title="statement not covered" >import EditMenuItem from "./views/edit-menu-item"</span>
+<span class="cstat-no" title="statement not covered" >import Chat from "./views/chat"</span>
+&nbsp;
+class App extends React.Component {
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(</span>props) <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.state = {</span>
+            user: null
+        };
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    componentDidMount() </span>{
+<span class="cstat-no" title="statement not covered" >        this.fetchAndUpdateUserInfo()</span>
+    }
+&nbsp;
+&nbsp;
+&nbsp;
+    fetchAndUpdateUserInfo = <span class="fstat-no" title="function not covered" >async () =&gt; </span>{
+&nbsp;
+        const url = <span class="cstat-no" title="statement not covered" >"/api/user";</span>
+&nbsp;
+        let response;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        try {</span>
+<span class="cstat-no" title="statement not covered" >            response = await fetch(url, {</span>
+                method: "get"
+            });
+        } catch (err) {
+<span class="cstat-no" title="statement not covered" >            this.setState({errorMsg: "Failed to connect to server: " + err});</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (response.status === 401) {</span>
+            //that is ok
+<span class="cstat-no" title="statement not covered" >            this.updateLoggedInUser(null);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (response.status !== 200) {</span>
+            //TODO here could have some warning message in the page.
+        } else {
+            const payload = <span class="cstat-no" title="statement not covered" >await response.json();</span>
+<span class="cstat-no" title="statement not covered" >            this.updateLoggedInUser(payload);</span>
+        }
+    };
+&nbsp;
+    updateLoggedInUser = (<span class="fstat-no" title="function not covered" >user) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({user: user});</span>
+    };
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    notFound() </span>{
+<span class="cstat-no" title="statement not covered" >        return (</span>
+            &lt;div&gt;
+                &lt;h2&gt;NOT FOUND: 404&lt;/h2&gt;
+                &lt;p&gt;
+                    ERROR: the page you requested in not available.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        );
+    };
+&nbsp;
+<span class="fstat-no" title="function not covered" >    render () </span>{
+&nbsp;
+        const id = <span class="cstat-no" title="statement not covered" >this.state.user ? this.state.user.id : null;</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+            &lt;BrowserRouter&gt;
+                &lt;div&gt;
+                    &lt;Switch&gt;
+                        &lt;Route exact path="/"
+                               render={<span class="fstat-no" title="function not covered" >props =&gt; <span class="cstat-no" title="statement not covered" ></span>&lt;Home {...props}</span>
+                                                      userId={id}
+                                                      user={this.state.user}
+                                                      updateLoggedInUser={this.updateLoggedInUser}
+                                                      fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}
+                               /&gt;}/&gt;
+                        &lt;Route exact path="/login"
+                               render={<span class="fstat-no" title="function not covered" >props =&gt; <span class="cstat-no" title="statement not covered" ></span>&lt;Login {...props}</span>
+                                                       fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/&gt;}/&gt;
+                        &lt;Route exact path="/signup"
+                               render={<span class="fstat-no" title="function not covered" >props =&gt; <span class="cstat-no" title="statement not covered" ></span>&lt;SignUp {...props}</span>
+                                                        fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/&gt;}/&gt;
+                        &lt;Route exact path="/chat" render={<span class="fstat-no" title="function not covered" >props =&gt; <span class="cstat-no" title="statement not covered" ></span>&lt;Chat {...props}</span>
+                                                                         user={this.state.user}/&gt;}/&gt;
+                        &lt;Route exact path="/add-menu-item" component={AddMenuItem}/&gt;
+                        &lt;Route exact path="/edit-menu-item/:id" component={EditMenuItem}/&gt;
+                        &lt;Route component={this.notFound}/&gt;
+                    &lt;/Switch&gt;
+                &lt;/div&gt;
+            &lt;/BrowserRouter&gt;
+        )
+    }
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >ReactDOM.render(&lt;App/&gt;, document.getElementById("root"))</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Apr 18 2019 20:29:02 GMT+0200 (Central European Summer Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

@@ -85,14 +85,16 @@ export class AddMenuItem extends React.Component {
                 <textarea
                     placeholder={"Lactose, Gluten, Mushroom"}
                     className="big-input" value={this.state.allergies}
-                    onChange={value => this.updateAllergies(value)}/>
+                    onChange={value => this.updateAllergies(value)}
+                />
 
                 <p>List of Ingredients - separate each ingredient with a comma as shown in box below.</p>
                 <textarea
                     placeholder={"Tomatoes, Beef, Cabbage"}
                     className="big-input"
                     value={this.state.ingredients}
-                    onChange={value => this.updateIngredients(value)}/>
+                    onChange={value => this.updateIngredients(value)}
+                />
 
                 <p>Dish Price</p>
                 <input className={"input-field"} type="text" value={this.state.price} onChange={value => this.updateDishPrice(value)}/>

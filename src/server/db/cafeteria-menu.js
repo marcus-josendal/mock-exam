@@ -73,7 +73,7 @@ function addMenuItem(name, ingredients, allergies, price) {
     }
 
     cafeteriaMenu.push(item)
-    return cafeteriaMenu.length
+    return cafeteriaMenu.length - 1
 }
 
 function deleteMenuItem(id) {

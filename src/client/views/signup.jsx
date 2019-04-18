@@ -21,13 +21,15 @@ export class SignUp extends React.Component {
                 <input
                     className={"input-field"}
                     type="text" value={this.state.username}
-                    onChange={value => this.updateUserName(value)}/>
+                    onChange={value => this.updateUserName(value)}
+                />
 
                 <h3 className={"align-left"}>Password: </h3>
                 <input
                     className={"input-field"}
                     type="password" value={this.state.pw}
-                    onChange={value => this.updatePassword(value)}/>
+                    onChange={value => this.updatePassword(value)}
+                />
 
                 <button className={"standard-button"} onClick={this.signUp}>Create user</button>
             </div>
