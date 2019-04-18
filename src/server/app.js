@@ -59,6 +59,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/api', authApi)
 
+/* WEBSOCKET CHAT */
 let counter = 0
 const messages = []
 
@@ -81,6 +82,7 @@ app.ws('/', (ws, req) => {
         })
     })
 })
+
 
 app.get('/api/cafeteriaMenu', (req, res) => {
     res.json(getMenu())

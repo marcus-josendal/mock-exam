@@ -99,6 +99,9 @@ class Home extends React.Component {
                 <Link to="/add-menu-item">
                     <button>Add Menu Item</button>
                 </Link>
+                <Link to="/chat">
+                    <button>Chat with a customer!</button>
+                </Link>
             </div>
         )
     }
@@ -110,6 +113,10 @@ class Home extends React.Component {
                 <Link className={"link"} to={"/signup"}> Link to sign-in page </Link>
                 <br/>
                 <Link className={"link"} to={"/login"}> Link to login page </Link>
+                <br/>
+                <Link to="/chat">
+                    <button>Chat with a chef!</button>
+                </Link>
             </div>
         )
     }

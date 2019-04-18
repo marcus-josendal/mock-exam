@@ -124,13 +124,27 @@ export class EditMenuItem extends React.Component {
                 <input className={"input-field"} type="text" placeholder={this.state.menuItem.dishName} value={this.state.dishName} onChange={value => this.updateDishName(value)}/>
 
                 <p>List of Ingredients - separate each ingredient with a comma as shown in box below.</p>
-                <textarea className="big-input" placeholder={this.state.menuItem.ingredients} value={this.state.ingredients} onChange={value => this.updateIngredients(value)}/>
+                <textarea
+                    className="big-input"
+                    placeholder={this.state.menuItem.ingredients}
+                    value={this.state.ingredients}
+                    onChange={value => this.updateIngredients(value)}/>
 
                 <p>List of Allergies - separate each ingredient with a comma as shown in box below.</p>
-                <textarea  className="big-input" placeholder={this.state.menuItem.allergies} value={this.state.allergies} onChange={value => this.updateAllergies(value)}/>
+                <textarea
+                    className="big-input"
+                    placeholder={this.state.menuItem.allergies}
+                    value={this.state.allergies}
+                    onChange={value => this.updateAllergies(value)}/>
 
                 <p>Dish Price</p>
-                <input className={"input-field"} type="text" placeholder={this.state.menuItem.price} value={this.state.price} onChange={value => this.updateDishPrice(value)}/>
+                <input
+                    className={"input-field"}
+                    type="text"
+                    placeholder={this.state.menuItem.price}
+                    value={this.state.price}
+                    onChange={value => this.updateDishPrice(value)}/>
+
                 <button onClick={() => this.updateDish(
                     this.state.dishName,
                     this.state.ingredients,
