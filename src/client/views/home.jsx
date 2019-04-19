@@ -129,7 +129,14 @@ class Home extends React.Component {
         if (this.state.error !== null) {
             menu = <p> There is something wrong with the server </p>
         } else if (this.state.menu === null || this.state.menu.length === 0) {
-            menu = <p> There is no menu in the database </p>
+            menu = <div>
+                <p> There is no menu in the database </p>
+                <Link to="/add-menu-item">
+                    <button>Add Menu Item</button>
+                </Link>
+            </div>
+
+
         } else {
             menu = this.state.menu.map(menuItem => {
                 return <div className={"menu-item"} key={menuItem.dish}>

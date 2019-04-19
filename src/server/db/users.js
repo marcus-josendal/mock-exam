@@ -24,4 +24,8 @@ function createUser(id, password) {
     return true
 }
 
-module.exports = { verifyUser, createUser, getUser }
+function resetAllUsers(){
+    users.clear();
+}
+
+module.exports = { verifyUser, createUser, getUser, resetAllUsers }

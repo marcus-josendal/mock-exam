@@ -2,16 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de35680b-7669-49d0-83c4-7e3f5c7a071b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/clover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/clover.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/coverage-final.json" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/coverage-final.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/app.jsx.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/app.jsx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/views/add-menu-item.jsx.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/views/add-menu-item.jsx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/views/chat.jsx.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/views/chat.jsx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/views/edit-menu-item.jsx.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/views/edit-menu-item.jsx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/views/home.jsx.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/views/home.jsx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/views/login.jsx.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/views/login.jsx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/client/views/signup.jsx.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/client/views/signup.jsx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/app.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/app.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/db/cafeteria-menu.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/db/cafeteria-menu.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/db/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/db/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/db/users.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/db/users.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/routes/auth-api.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/routes/auth-api.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/routes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/routes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/server/server.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/server/server.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/views/add-menu-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/add-menu-item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/views/edit-menu-item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/edit-menu-item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/views/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/views/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/signup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/views/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/views/home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/db/cafeteria-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/cafeteria-menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/db/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/db/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/server/app-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/server/app-test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/public/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,30 +46,30 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="418" />
-          <entry key="js" value="579" />
-          <entry key="jsx" value="853" />
+          <entry key="js" value="1231" />
+          <entry key="jsx" value="886" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="418" />
-          <entry key="JSX Harmony" value="853" />
-          <entry key="JavaScript" value="579" />
+          <entry key="JSX Harmony" value="886" />
+          <entry key="JavaScript" value="1231" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="js" value="9" />
-          <entry key="jsx" value="7" />
+          <entry key="js" value="16" />
+          <entry key="jsx" value="8" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="JSX Harmony" value="7" />
-          <entry key="JavaScript" value="9" />
+          <entry key="JSX Harmony" value="8" />
+          <entry key="JavaScript" value="16" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -67,10 +85,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/views/home.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="225">
+              <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -78,17 +108,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/db/cafeteria-menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+            <state relative-caret-position="2100">
+              <caret line="84" column="40" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/server/app-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+            <state relative-caret-position="725">
+              <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/server/auth-test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="625">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/server/websocket-test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-197">
+              <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/mytest-utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3061">
+              <caret line="202" column="59" selection-start-line="202" selection-start-column="59" selection-end-line="202" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/db/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -96,7 +171,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/views/add-menu-item.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="-160">
               <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="73" />
             </state>
           </provider>
@@ -111,6 +186,11 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ws</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -127,11 +207,16 @@
         <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/src/client/views/login.jsx" />
         <option value="$PROJECT_DIR$/tests/mytest-utils.js" />
-        <option value="$PROJECT_DIR$/src/client/views/home.jsx" />
         <option value="$PROJECT_DIR$/tests/client/home-test.js" />
-        <option value="$PROJECT_DIR$/src/server/app.js" />
+        <option value="$PROJECT_DIR$/src/server/server.js" />
         <option value="$PROJECT_DIR$/src/server/db/cafeteria-menu.js" />
+        <option value="$PROJECT_DIR$/src/client/views/home.jsx" />
         <option value="$PROJECT_DIR$/tests/server/app-test.js" />
+        <option value="$PROJECT_DIR$/src/server/db/users.js" />
+        <option value="$PROJECT_DIR$/tests/server/auth.test.js" />
+        <option value="$PROJECT_DIR$/tests/server/auth-test.js" />
+        <option value="$PROJECT_DIR$/src/server/app.js" />
+        <option value="$PROJECT_DIR$/tests/server/websocket-test.js" />
       </list>
     </option>
   </component>
@@ -201,7 +286,20 @@
             <path>
               <item name="cantina-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="cantina-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cantina-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cantina-app" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cantina-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cantina-app" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -225,81 +323,81 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Delete all dishes">
-    <configuration name="Delete all dishes" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Test counter update">
+    <configuration name="Test counter update" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/server/app-test.js" />
+      <test-file value="$PROJECT_DIR$/tests/server/websocket-test.js" />
       <test-names>
-        <test-name value="Delete all dishes" />
+        <test-name value="Test counter update" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test create dish" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test get token" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/server/app-test.js" />
+      <test-file value="$PROJECT_DIR$/tests/server/auth-test.js" />
       <test-names>
-        <test-name value="Test create dish" />
+        <test-name value="Test get token" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test get all" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test login with wrong password" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/server/app-test.js" />
+      <test-file value="$PROJECT_DIR$/tests/server/auth-test.js" />
       <test-names>
-        <test-name value="Test get all" />
+        <test-name value="Test login with wrong password" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test get one not found" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test logout" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/server/app-test.js" />
+      <test-file value="$PROJECT_DIR$/tests/server/auth-test.js" />
       <test-names>
-        <test-name value="Test get one not found" />
+        <test-name value="Test logout" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test get one" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test notify 1 user with WS" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/server/app-test.js" />
+      <test-file value="$PROJECT_DIR$/tests/server/websocket-test.js" />
       <test-names>
-        <test-name value="Test get one" />
+        <test-name value="Test notify 1 user with WS" />
       </test-names>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.Test get all" />
-      <item itemvalue="Jest.Test get one" />
-      <item itemvalue="Jest.Test get one not found" />
-      <item itemvalue="Jest.Test create dish" />
-      <item itemvalue="Jest.Delete all dishes" />
+      <item itemvalue="Jest.Test login with wrong password" />
+      <item itemvalue="Jest.Test logout" />
+      <item itemvalue="Jest.Test get token" />
+      <item itemvalue="Jest.Test counter update" />
+      <item itemvalue="Jest.Test notify 1 user with WS" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Delete all dishes" />
-        <item itemvalue="Jest.Test create dish" />
-        <item itemvalue="Jest.Test get one" />
-        <item itemvalue="Jest.Test get one not found" />
-        <item itemvalue="Jest.Test get all" />
+        <item itemvalue="Jest.Test counter update" />
+        <item itemvalue="Jest.Test notify 1 user with WS" />
+        <item itemvalue="Jest.Test get token" />
+        <item itemvalue="Jest.Test logout" />
+        <item itemvalue="Jest.Test login with wrong password" />
       </list>
     </recent_temporary>
   </component>
@@ -319,44 +417,44 @@
       <workItem from="1555320367583" duration="6136000" />
       <workItem from="1555397368486" duration="21982000" />
       <workItem from="1555521393308" duration="9204000" />
-      <workItem from="1555604405068" duration="8948000" />
+      <workItem from="1555604405068" duration="16086000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_create_dish - 2019.04.18 at 20h 28m 04s.xml">
-      <configuration name="Test create dish" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_notify_1_user_with_WS - 2019.04.19 at 13h 28m 27s.xml">
+      <configuration name="Test notify 1 user with WS" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Test_create_dish - 2019.04.18 at 20h 28m 35s.xml">
-      <configuration name="Test create dish" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_notify_1_user_with_WS - 2019.04.19 at 13h 29m 57s.xml">
+      <configuration name="Test notify 1 user with WS" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Test_create_dish - 2019.04.18 at 20h 28m 50s.xml">
-      <configuration name="Test create dish" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_notify_1_user_with_WS - 2019.04.19 at 13h 32m 26s.xml">
+      <configuration name="Test notify 1 user with WS" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Delete_all_dishes - 2019.04.18 at 20h 43m 52s.xml">
-      <configuration name="Delete all dishes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_counter_update - 2019.04.19 at 13h 34m 42s.xml">
+      <configuration name="Test counter update" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Delete_all_dishes - 2019.04.18 at 20h 44m 07s.xml">
-      <configuration name="Delete all dishes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_counter_update - 2019.04.19 at 13h 35m 18s.xml">
+      <configuration name="Test counter update" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Delete_all_dishes - 2019.04.18 at 20h 44m 23s.xml">
-      <configuration name="Delete all dishes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_counter_update - 2019.04.19 at 13h 35m 55s.xml">
+      <configuration name="Test counter update" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Delete_all_dishes - 2019.04.18 at 20h 45m 00s.xml">
-      <configuration name="Delete all dishes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_counter_update - 2019.04.19 at 13h 36m 20s.xml">
+      <configuration name="Test counter update" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Delete_all_dishes - 2019.04.18 at 20h 45m 24s.xml">
-      <configuration name="Delete all dishes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_counter_update - 2019.04.19 at 13h 36m 35s.xml">
+      <configuration name="Test counter update" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Delete_all_dishes - 2019.04.18 at 20h 45m 44s.xml">
-      <configuration name="Delete all dishes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_counter_update - 2019.04.19 at 13h 37m 05s.xml">
+      <configuration name="Test counter update" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Delete_all_dishes - 2019.04.18 at 20h 49m 09s.xml">
-      <configuration name="Delete all dishes" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Test_counter_update - 2019.04.19 at 13h 45m 28s.xml">
+      <configuration name="Test counter update" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15227000" />
+    <option name="totallyTimeSpent" value="22365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -367,15 +465,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991204" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32925472" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35038933" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Quokka" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.39933258" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.39933258" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32991204" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -390,9 +488,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/server.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/jest-setup.js">
@@ -443,15 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/views/home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/views/signup.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -482,38 +568,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/mytest-utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4900">
-          <caret line="196" column="29" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/db/cafeteria-menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/views/add-menu-item.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="-160">
           <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/app.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express-ws/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="171">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/views/home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/db/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/server/auth-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/server/app-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+        <state relative-caret-position="725">
+          <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/mytest-utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3061">
+          <caret line="202" column="59" selection-start-line="202" selection-start-column="59" selection-end-line="202" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/db/cafeteria-menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="84" column="40" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/server/websocket-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
         </state>
       </provider>
     </entry>

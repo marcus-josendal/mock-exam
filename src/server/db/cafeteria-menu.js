@@ -79,13 +79,16 @@ function addMenuItem(name, ingredients, allergies, price) {
 function deleteMenuItem(id) {
     let newMenu = []
     let i = 0
+
     cafeteriaMenu.map(menuItem => {
+        console.log(menuItem.id.toString() + " " + id)
         if(menuItem.id.toString() !== id){
             menuItem.id = i
             i++
             newMenu.push(menuItem)
         }
     })
+    //console.log(cafeteriaMenu)
     cafeteriaMenu = newMenu
     return true
 }
