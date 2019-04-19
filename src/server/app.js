@@ -61,16 +61,22 @@ app.use('/api', authApi)
 
 /* WEBSOCKET CHAT */
 let counter = 0
+let _counter = 0
 const messages = []
 
 app.ws('/', (ws, req) => {
     console.log("Websocket connection established")
-
+    counter++
+    ews.getWss().clients.forEach((client) => {
+        if(client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify({connectedClients: counter}))
+        }
+    })
     ws.send(JSON.stringify(messages))
 
     ws.on('message', fromClient => {
         const data = JSON.parse(fromClient)
-        const id = counter++
+        const id = _counter++
         const msg = {id: id, author: data.author, text: data.text}
 
         messages.push(msg)
@@ -78,6 +84,15 @@ app.ws('/', (ws, req) => {
         ews.getWss().clients.forEach((client) => {
             if(client.readyState === WebSocket.OPEN) {
                 client.send(JSON.stringify([msg]))
+            }
+        })
+    })
+
+    ws.on('close', () => {
+        counter--
+        ews.getWss().clients.forEach((client) => {
+            if(client.readyState === WebSocket.OPEN) {
+                client.send(JSON.stringify({connectedClients: counter}))
             }
         })
     })

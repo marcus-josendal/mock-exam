@@ -21,6 +21,8 @@ export class Chat extends React.Component {
         this.socket.onmessage = (event => {
             const msgList = JSON.parse(event.data);
 
+            if (!Array.isArray(msgList)) return
+
             this.setState(
                 prev => {
                     if(prev.messages === null) {

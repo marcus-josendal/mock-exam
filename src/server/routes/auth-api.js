@@ -18,11 +18,7 @@ router.post('/signup', function (req, res) {
     }
     passport.authenticate('local')(req, res, () => {
         req.session.save((err) => {
-            if (err) {
-                res.status(500).send();
-            } else {
-                res.status(201).send();
-            }
+            err ? res.status(500).send() : res.status(201).send()
         });
     });
 });

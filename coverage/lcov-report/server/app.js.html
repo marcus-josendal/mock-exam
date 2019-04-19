@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">81.82% </span>
+        <span class="strong">83.91% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>63/77</span>
+        <span class='fraction'>73/87</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">62.5% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>10/16</span>
+        <span class='fraction'>12/20</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>9/12</span>
+        <span class='fraction'>12/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">81.82% </span>
+        <span class="strong">83.91% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>63/77</span>
+        <span class='fraction'>73/87</span>
       </div>
     </div>
   </div>
@@ -188,7 +188,22 @@
 143
 144
 145
-146</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -252,22 +267,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -396,16 +426,22 @@ app.use('/api', authApi)
 &nbsp;
 /* WEBSOCKET CHAT */
 let counter = 0
+let _counter = 0
 const messages = []
 &nbsp;
 app.ws('/', (ws, req) =&gt; {
     console.log("Websocket connection established")
-&nbsp;
+    counter++
+    ews.getWss().clients.forEach((client) =&gt; {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify({connectedClients: counter}))
+        }
+    })
     ws.send(JSON.stringify(messages))
 &nbsp;
     ws.on('message', <span class="fstat-no" title="function not covered" >fr</span>omClient =&gt; {
         const data = <span class="cstat-no" title="statement not covered" >JSON.parse(fromClient)</span>
-        const id = <span class="cstat-no" title="statement not covered" >counter++</span>
+        const id = <span class="cstat-no" title="statement not covered" >_counter++</span>
         const msg = <span class="cstat-no" title="statement not covered" >{id: id, author: data.author, text: data.text}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        messages.push(msg)</span>
@@ -413,6 +449,15 @@ app.ws('/', (ws, req) =&gt; {
 <span class="cstat-no" title="statement not covered" >        ews.getWss().clients.forEach(<span class="fstat-no" title="function not covered" >(c</span>lient) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if(client.readyState === WebSocket.OPEN) {</span>
 <span class="cstat-no" title="statement not covered" >                client.send(JSON.stringify([msg]))</span>
+            }
+        })
+    })
+&nbsp;
+    ws.on('close', () =&gt; {
+        counter--
+        ews.getWss().clients.forEach((client) =&gt; {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if(client.readyState === WebSocket.OPEN) {
+                client.send(JSON.stringify({connectedClients: counter}))
             }
         })
     })
@@ -484,7 +529,7 @@ module.exports = app;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Apr 19 2019 13:54:52 GMT+0200 (Central European Summer Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Apr 19 2019 15:34:15 GMT+0200 (Central European Summer Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

@@ -37,7 +37,7 @@ afterEach(() => {
 
 
 
-test("Test counter update", async () =>{
+test.only("Test counter update", async () =>{
 
     //register a client using WS
     const first = new WS('ws://localhost:' + port);
@@ -45,10 +45,9 @@ test("Test counter update", async () =>{
 
     let a = 0;
     first.on('message', data => {
-        a = JSON.parse(data).userCount;
+        const tmp = JSON.parse(data).connectedClients;
+        if (tmp) a = tmp
     });
-
-    console.log(a)
 
     /*
         Important here that we check for the connection (and release the current function
@@ -67,7 +66,8 @@ test("Test counter update", async () =>{
 
     let b = 0;
     second.on('message', data => {
-        b = JSON.parse(data).userCount;
+        const tmp = JSON.parse(data).connectedClients;
+        if (tmp) b = tmp
     });
 
 
