@@ -1,4 +1,4 @@
-import {flushPromises, overrideFetch, stubFetch} from '../mytest-utils'
+import {asyncCheckCondition, flushPromises, overrideFetch, stubFetch} from '../mytest-utils'
 
 const React = require('react');
 const {mount} = require('enzyme');
@@ -6,6 +6,9 @@ const {BrowserRouter} = require('react-router-dom');
 const {MemoryRouter} = require('react-router-dom');
 
 import Home from '../../src/client/views/home'
+import {getMenu} from '../../src/server/db/cafeteria-menu'
+const express = require('express');
+const app = express();
 
 const notLogMsg = "You are not logged in"
 
@@ -34,7 +37,6 @@ test("Test failed fetch", async () => {
 
     const html = driver.html();
 
-    //here we just check it appears somewhere in the updated HTML
     expect(html).toMatch("Issue");
 });
 
@@ -74,26 +76,23 @@ test("Test display all dishes using SuperTest", async () => {
         </MemoryRouter>
     );
 
-    // unfortunately, this does not work here
-    //await flushPromises();
-
     //let's check if table is displayed within a certain amount of time
     const predicate = () => {
         //needed if changed HTML since component was mounted
         driver.update();
-        const tableSearch = driver.find('.homeContainer');
-        const tableIsDisplayed =  (tableSearch.length >= 1);
-        return tableIsDisplayed;
+        const menu = driver.find('.home-container');
+        const menuDisplayed =  (menu.length >= 1);
+        return menuDisplayed;
     };
 
-    const displayedTable = await asyncCheckCondition(predicate, 3000, 200);
-    expect(displayedTable).toBe(true);
+    const menuDisplayed = await asyncCheckCondition(predicate, 3000, 500);
+    expect(menuDisplayed).toBe(true);
 
-    const books = rep.getAllBooks();
+    const menu = getMenu();
     const html = driver.html();
 
-    for(let i=0; i<books.length; i++){
-        expect(html).toMatch(books[i].title);
+    for(let i = 0 ; i< menu.length; i++){
+        expect(html).toMatch(menu[i].dish);
     }
 });
 
