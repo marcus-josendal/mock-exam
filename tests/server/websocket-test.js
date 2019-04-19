@@ -37,7 +37,7 @@ afterEach(() => {
 
 
 
-test.only("Test counter update", async () =>{
+test("Test counter update", async () =>{
 
     //register a client using WS
     const first = new WS('ws://localhost:' + port);

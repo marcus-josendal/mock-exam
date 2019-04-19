@@ -8,7 +8,7 @@ const {MemoryRouter} = require('react-router-dom');
 import Home from '../../src/client/views/home'
 import {getMenu} from '../../src/server/db/cafeteria-menu'
 const express = require('express');
-const app = express();
+import app from '../../src/server/app'
 
 const notLogMsg = "You are not logged in"
 
@@ -40,7 +40,7 @@ test("Test failed fetch", async () => {
     expect(html).toMatch("Issue");
 });
 
-test("Test display 1 book using stub", async () => {
+test("Test display 1 dish using stub", async () => {
 
     const dish = "Pizza";
 
@@ -77,10 +77,11 @@ test("Test display all dishes using SuperTest", async () => {
     );
 
     //let's check if table is displayed within a certain amount of time
+
     const predicate = () => {
         //needed if changed HTML since component was mounted
         driver.update();
-        const menu = driver.find('.home-container');
+        const menu = driver.find('.menu-item');
         const menuDisplayed =  (menu.length >= 1);
         return menuDisplayed;
     };
@@ -109,6 +110,33 @@ test("Test not logged in", async () => {
 
     const html = driver.html();
     expect(html.includes(notLogMsg)).toEqual(false);
+});
+
+test("Test logged in", async () => {
+
+    overrideFetch(app);
+
+    const driver = mount(
+        <MemoryRouter initialEntries={["/"]}>
+            <Home/>
+        </MemoryRouter>
+    );
+
+    //let's check if table is displayed within a certain amount of time
+
+    const predicate = () => {
+        //needed if changed HTML since component was mounted
+        driver.update();
+        const menu = driver.find('.loggedIn');
+        const menuDisplayed =  (menu.length >= 1);
+        return menuDisplayed;
+    };
+
+    const menuDisplayed = await asyncCheckCondition(predicate, 3000, 500);
+    expect(menuDisplayed).toBe(true);
+
+    const menu = getMenu();
+    const html = driver.html();
 });
 
 

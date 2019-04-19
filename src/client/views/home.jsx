@@ -93,7 +93,7 @@ class Home extends React.Component {
 
     loggedIn() {
         return (
-            <div>
+            <div className="loggedIn">
                 <h3>Welcome { this.props.userId }</h3>
                 <button onClick={ this.doLogout }>Logout</button>
                 <Link to="/add-menu-item">
