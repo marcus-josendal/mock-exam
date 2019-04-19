@@ -127,7 +127,7 @@ class Home extends React.Component {
         let authContent
         const userId = this.props.userId
         if (this.state.error !== null) {
-            menu = <p> There is something wrong with the server </p>
+            menu = <p> {this.state.error} </p>
         } else if (this.state.menu === null || this.state.menu.length === 0) {
             menu = <div>
                 <p> There is no menu in the database </p>
