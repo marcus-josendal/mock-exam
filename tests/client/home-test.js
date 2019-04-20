@@ -116,13 +116,15 @@ test("Test logged in", async () => {
 
     overrideFetch(app);
 
+    const userId = "Username"
+
     const driver = mount(
         <MemoryRouter initialEntries={["/"]}>
-            <Home/>
+            <Home userId={userId}/>
         </MemoryRouter>
     );
 
-    //let's check if table is displayed within a certain amount of time
+    //Checks if user is displayed
 
     const predicate = () => {
         //needed if changed HTML since component was mounted
@@ -135,8 +137,38 @@ test("Test logged in", async () => {
     const menuDisplayed = await asyncCheckCondition(predicate, 3000, 500);
     expect(menuDisplayed).toBe(true);
 
-    const menu = getMenu();
     const html = driver.html();
+
+    expect(html.includes(userId)).toEqual(true);
 });
+
+test("Test do logout", async () => {
+
+    overrideFetch(app);
+
+    const userId = "Username"
+    const updateLoggedInUser = () => {}
+    let page = null;
+    const history = {push: (h) => {page=h}}
+
+    const driver = mount(
+        <MemoryRouter initialEntries={["/"]}>
+            <Home userId={userId} updateLoggedInUser={updateLoggedInUser} history={history}/>
+        </MemoryRouter>
+    );
+
+    const predicate = () => {
+        //needed if changed HTML since component was mounted
+        driver.update();
+        const loggedIn = driver.find('#logoutButton');
+        const loggedInDisplayed =  (loggedIn.length >= 1);
+        return loggedInDisplayed;
+    };
+
+    const loggedInDisplayed = await asyncCheckCondition(predicate, 3000, 500);
+    expect(loggedInDisplayed).toBe(true);
+
+});
+
 
 

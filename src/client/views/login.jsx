@@ -19,6 +19,7 @@ export class Login extends React.Component {
                 <h3 className={"align-left"}>Username: </h3>
                 <input
                     className={"input-field"}
+                    id={"username"}
                     type="text"
                     value={this.state.username}
                     onChange={value => this.updateUserName(value)}
@@ -27,13 +28,14 @@ export class Login extends React.Component {
                 <h3 className={"align-left"}>Password: </h3>
                 <input
                     className={"input-field"}
+                    id={"password"}
                     type="password"
                     value={this.state.pw}
                     onChange={value => this.updatePassword(value)}
                 />
 
                 <p> {this.state.errorMsg} </p>
-               <button className={"standard-button"} onClick={this.logIn}>Login</button>
+               <button id={"loginbtn"} className={"standard-button"} onClick={this.logIn}>Login</button>
             </div>
         );
     }

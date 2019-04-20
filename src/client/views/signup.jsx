@@ -8,7 +8,7 @@ export class SignUp extends React.Component {
         this.state = {
             username: '',
             pw: '',
-            errorMessage: null
+            errorMsg: null
         }
     }
 
@@ -20,18 +20,22 @@ export class SignUp extends React.Component {
                 <h3 className={"align-left"}>Username: </h3>
                 <input
                     className={"input-field"}
-                    type="text" value={this.state.username}
+                    id={"signupUsername"}
+                    type="text"
+                    value={this.state.username}
                     onChange={value => this.updateUserName(value)}
                 />
 
                 <h3 className={"align-left"}>Password: </h3>
                 <input
                     className={"input-field"}
-                    type="password" value={this.state.pw}
+                    type="password"
+                    id={"signupPassword"}
+                    value={this.state.pw}
                     onChange={value => this.updatePassword(value)}
                 />
-
-                <button className={"standard-button"} onClick={this.signUp}>Create user</button>
+                <p> {this.state.errorMsg} </p>
+                <button id={"signupBtn"} className={"standard-button"} onClick={this.signUp}>Create user</button>
             </div>
         );
     }
@@ -68,13 +72,16 @@ export class SignUp extends React.Component {
         } catch (error) {
             this.setState({errorMessage: "Failed to connect to the server " + error})
         }
-
+        console.log(response.status)
         if(response.status === 400) {
-            this.setState({errorMessage: "Invalid username or password"})
+            this.setState({errorMsg: "The user already exists in our database"})
+            return;
         }
+        console.log(this.state.errorMsg)
 
         if(response.status !== 201){
             this.setState({errorMsg: "Error when connecting to server: status code " + response.status});
+            return;
         }
 
         this.setState({errorMsg: null})
