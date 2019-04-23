@@ -146,29 +146,80 @@ test("Test do logout", async () => {
 
     overrideFetch(app);
 
-    const userId = "Username"
-    const updateLoggedInUser = () => {}
+    let userId = "Foo";
+    const updateLoggedInUser = (id) => {userId = id};
     let page = null;
-    const history = {push: (h) => {page=h}}
+    const history = {push: (h) => {page=h}};
 
     const driver = mount(
         <MemoryRouter initialEntries={["/"]}>
-            <Home userId={userId} updateLoggedInUser={updateLoggedInUser} history={history}/>
+            <Home userId={userId} updateLoggedInUser={updateLoggedInUser} history={history} />
         </MemoryRouter>
     );
 
     const predicate = () => {
         //needed if changed HTML since component was mounted
         driver.update();
-        const loggedIn = driver.find('#logoutButton');
-        const loggedInDisplayed =  (loggedIn.length >= 1);
-        return loggedInDisplayed;
+        const menu = driver.find('#logoutButton');
+        const menuDisplayed =  (menu.length >= 1);
+        return menuDisplayed;
     };
 
-    const loggedInDisplayed = await asyncCheckCondition(predicate, 3000, 500);
-    expect(loggedInDisplayed).toBe(true);
+    const menuDisplayed = await asyncCheckCondition(predicate, 3000, 500);
+    expect(menuDisplayed).toBe(true);
 
+    const logoutBtn = driver.find("#logoutButton").at(0);
+    logoutBtn.simulate('click');
+
+    const changed = await asyncCheckCondition(() => {
+        driver.update();
+        const displayed = driver.html().includes(userId);
+        return !displayed;
+    }, 2000, 200);
+    expect(changed).toEqual(true);
+
+    expect(userId).toEqual(null);
+    expect(page).toEqual("/");
 });
+
+test("Delete dish", async () => {
+    overrideFetch(app);
+
+    let userId = "Foo";
+    const updateLoggedInUser = (id) => {userId = id};
+    let page = null;
+    const history = {push: (h) => {page=h}};
+
+    const driver = mount(
+        <MemoryRouter initialEntries={["/"]}>
+            <Home userId={userId} updateLoggedInUser={updateLoggedInUser} history={history} />
+        </MemoryRouter>
+    );
+
+    const predicate = () => {
+        //needed if changed HTML since component was mounted
+        driver.update();
+        const menu = driver.find('.deleteButton');
+        const menuDisplayed =  (menu.length >= 1);
+        return menuDisplayed;
+    };
+
+    const menuDisplayed = await asyncCheckCondition(predicate, 3000, 500);
+    expect(menuDisplayed).toBe(true);
+
+    const deleteBtn = driver.find(".deleteButton").at(0);
+    deleteBtn.simulate('click');
+
+    const changed = await asyncCheckCondition(() => {
+        driver.update();
+        const displayed = driver.html().includes("Pepperoni Pizza");
+        return !displayed;
+    }, 2000, 200);
+    expect(changed).toEqual(true);
+
+
+
+})
 
 
 

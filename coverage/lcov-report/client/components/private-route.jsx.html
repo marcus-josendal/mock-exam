@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for server/db/users.js</title>
+    <title>Code coverage report for client/components/private-route.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">server/db</a> users.js
+      <a href="..\..\index.html">All files</a> / <a href="index.html">client/components</a> private-route.jsx
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/11</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/11</span>
+        <span class='fraction'>4/4</span>
       </div>
     </div>
   </div>
@@ -61,81 +61,42 @@
 16
 17
 18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32</td><td class="line-coverage quiet"><span class="cline-any cline-yes">9x</span>
+19</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const users = new Map()
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
+import {Redirect, Route} from 'react-router-dom'
 &nbsp;
-function getUser(id) {
-    return users.get(id)
-}
+const isNullOrUndefined = value =&gt; value === null || typeof value === 'undefined'
 &nbsp;
-function verifyUser(id, password) {
-    const user = getUser(id)
+export const PrivateRoute = ({ component: Component, user, render: RenderComponent, ...rest}) =&gt;
+    &lt;Route {...rest} user={user} render={(props) =&gt; (
+        isNullOrUndefined(user) ?
+            &lt;Redirect to={{
+                pathname: '/login',
+                state: {from: props.location}
+            }} /&gt; :
+            isNullOrUndefined(Component) ?
+                &lt;RenderComponent {...props} /&gt; :
+                &lt;Component {...props} /&gt;
+    )} /&gt;
 &nbsp;
-    return user === undefined ? false : user.password === password
-}
-&nbsp;
-function createUser(id, password) {
-    if(getUser(id) !== undefined) {
-        return false
-    }
-&nbsp;
-    const user = {
-        id: id,
-        password: password
-    }
-&nbsp;
-    users.set(id, user)
-    return true
-}
-&nbsp;
-function resetAllUsers(){
-    users.clear();
-}
-&nbsp;
-module.exports = { verifyUser, createUser, getUser, resetAllUsers }
+export default PrivateRoute
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

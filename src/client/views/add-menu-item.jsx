@@ -78,28 +78,39 @@ export class AddMenuItem extends React.Component {
                 <p>Dish Name</p>
                 <input
                     className={"input-field"}
+                    id={"addDishName"}
                     type="text" value={this.state.dishName}
                     onChange={value => this.updateDishName(value)}/>
-
-                <p> List of Allergies - separate each ingredient with a comma as shown in box below. </p>
-                <textarea
-                    placeholder={"Lactose, Gluten, Mushroom"}
-                    className="big-input" value={this.state.allergies}
-                    onChange={value => this.updateAllergies(value)}
-                />
 
                 <p>List of Ingredients - separate each ingredient with a comma as shown in box below.</p>
                 <textarea
                     placeholder={"Tomatoes, Beef, Cabbage"}
                     className="big-input"
+                    id={"addIngredients"}
                     value={this.state.ingredients}
                     onChange={value => this.updateIngredients(value)}
                 />
 
-                <p>Dish Price</p>
-                <input className={"input-field"} type="text" value={this.state.price} onChange={value => this.updateDishPrice(value)}/>
+                <p> List of Allergies - separate each ingredient with a comma as shown in box below. </p>
+                <textarea
+                    placeholder={"Lactose, Gluten, Mushroom"}
+                    className="big-input"
+                    id={"addAllergies"}
+                    value={this.state.allergies}
+                    onChange={value => this.updateAllergies(value)}
+                />
 
-                <button onClick={() => this.addDish(
+                <p>Dish Price</p>
+                <input
+                    className={"input-field"}
+                    id={"addPrice"}
+                    type="text"
+                    value={this.state.price}
+                    onChange={value => this.updateDishPrice(value)}/>
+
+                <button
+                    id={"addDish"}
+                    onClick={() => this.addDish(
                     this.state.dishName,
                     this.state.ingredients,
                     this.state.allergies,

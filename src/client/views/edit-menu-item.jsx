@@ -3,14 +3,13 @@ import React from "react";
 export class EditMenuItem extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             menuItem: null,
+            error: null,
             dishName: '',
             ingredients: '',
             allergies: '',
             price: '',
-            error: null,
         }
     }
 
@@ -74,7 +73,8 @@ export class EditMenuItem extends React.Component {
     updateDish = async (dishName, ingredients, allergies, price) => {
         const allergiesList = this.convertToArray(allergies)
         const ingredientsList = this.convertToArray(ingredients)
-        const id = this.props.match.params.id
+        const id = parseInt(this.props.match.params.id)
+
 
         if(dishName.length === 0 || ingredients.length === 0 || allergies.length === 0 || price.toString().length === 0) {
             alert("Fill in all fields please!")
@@ -109,7 +109,7 @@ export class EditMenuItem extends React.Component {
         if(this.state.error !== null){
             return(
                 <div>
-                    <p>Cannot edit book. {this.state.error}</p>
+                    <p>Cannot edit dish. {this.state.error}</p>
                 </div>
             );
         }
@@ -121,11 +121,18 @@ export class EditMenuItem extends React.Component {
         return(
             <div>
                 <p>Dish Name</p>
-                <input className={"input-field"} type="text" placeholder={this.state.menuItem.dishName} value={this.state.dishName} onChange={value => this.updateDishName(value)}/>
+                <input
+                    className={"input-field"}
+                    id={"editDishName"}
+                    type="text"
+                    placeholder={this.state.menuItem.dishName}
+                    value={this.state.dishName}
+                    onChange={value => this.updateDishName(value)}/>
 
                 <p>List of Ingredients - separate each ingredient with a comma as shown in box below.</p>
                 <textarea
                     className="big-input"
+                    id={"editIngredients"}
                     placeholder={this.state.menuItem.ingredients}
                     value={this.state.ingredients}
                     onChange={value => this.updateIngredients(value)}
@@ -136,19 +143,23 @@ export class EditMenuItem extends React.Component {
                     className="big-input"
                     placeholder={this.state.menuItem.allergies}
                     value={this.state.allergies}
+                    id={"editAllergies"}
                     onChange={value => this.updateAllergies(value)}
                 />
 
                 <p>Dish Price</p>
                 <input
                     className={"input-field"}
+                    id={"editPrice"}
                     type="text"
                     placeholder={this.state.menuItem.price}
                     value={this.state.price}
                     onChange={value => this.updateDishPrice(value)}
                 />
 
-                <button onClick={() => this.updateDish(
+                <button
+                    id={"editDish"}
+                    onClick={() => this.updateDish(
                     this.state.dishName,
                     this.state.ingredients,
                     this.state.allergies,

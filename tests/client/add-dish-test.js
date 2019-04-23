@@ -2,15 +2,16 @@ import {asyncCheckCondition, overrideFetch} from '../mytest-utils'
 const React = require('react');
 const {mount} = require('enzyme');
 const {MemoryRouter} = require('react-router-dom');
-import EditMenuItem from '../../src/client/views/edit-menu-item'
+import AddMenuItem from '../../src/client/views/add-menu-item'
 import app from '../../src/server/app'
+const {createUser} = require('../../src/server/db/users')
 
 function fillForm(driver, dishName, ingredients, allergies, price){
-    const dishNameInput = driver.find("#editDishName");
-    const ingredientInput = driver.find("#editIngredients").at(0);
-    const allergiesInput = driver.find("#editAllergies").at(0);
-    const priceInput = driver.find("#editPrice").at(0);
-    const editBtn = driver.find("#editDish").at(0);
+    const dishNameInput = driver.find("#addDishName");
+    const ingredientInput = driver.find("#addIngredients").at(0);
+    const allergiesInput = driver.find("#addAllergies").at(0);
+    const priceInput = driver.find("#addPrice").at(0);
+    const editBtn = driver.find("#addDish").at(0);
 
     dishNameInput.simulate('change', {target: {value: dishName}});
     ingredientInput.simulate('change', {target: {value: ingredients.join(", ")}});
@@ -20,7 +21,7 @@ function fillForm(driver, dishName, ingredients, allergies, price){
     editBtn.simulate('click');
 }
 
-test("Test update dish", async () =>{
+test("Test add dish", async () =>{
 
     overrideFetch(app);
     let page = null;
@@ -31,8 +32,8 @@ test("Test update dish", async () =>{
     const price = 200
 
     const driver = mount(
-        <MemoryRouter initialEntries={["/edit-menu-item/0"]}>
-            <EditMenuItem match={{params: {id: 0}}} history={history} />
+        <MemoryRouter initialEntries={["/add-menu-item/"]}>
+            <AddMenuItem history={history} />
         </MemoryRouter>
     );
 

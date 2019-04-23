@@ -7,7 +7,8 @@ class Home extends React.Component {
 
         this.state = {
             menu: null,
-            error: null
+            error: null,
+            logoutError: null
         }
     }
 
@@ -49,7 +50,6 @@ class Home extends React.Component {
 
     deleteMenuItem = async(id) => {
         const url = "/api/cafeteriaMenu/" + id
-        console.log(url)
 
         let response
 
@@ -78,7 +78,9 @@ class Home extends React.Component {
         try {
             response = await fetch(url, {method: "post"});
         } catch (err) {
-            alert("Failed to connect to server: " + err);
+            this.setState({
+                logoutError: "There is something wrong with the server"
+            })
             return;
         }
 
@@ -96,6 +98,7 @@ class Home extends React.Component {
             <div className="loggedIn">
                 <h3>Welcome { this.props.userId }</h3>
                 <div id="logoutButton" onClick={ this.doLogout }>Logout</div>
+                <p> { this.state.logoutError } </p>
                 <Link to="/add-menu-item">
                     <button>Add Menu Item</button>
                 </Link>
@@ -161,7 +164,7 @@ class Home extends React.Component {
                     <p>{menuItem.price}</p>
                     {userId ? (
                         <div>
-                            <button onClick={_ => this.deleteMenuItem(menuItem.id)}>Delete</button>
+                            <button className={"deleteButton"} onClick={_ => this.deleteMenuItem(menuItem.id)}>Delete</button>
                             <Link to={"/edit-menu-item/" + menuItem.id}>
                                 <button>Edit</button>
                             </Link>

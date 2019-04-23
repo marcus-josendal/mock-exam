@@ -89,7 +89,11 @@ export class Login extends React.Component {
 
         if(response.status === 204) {
             await this.props.fetchAndUpdateUserInfo()
-            this.props.history.push('/');
+            if (this.props.location && this.props.location.state && this.props.location.state.from) {
+                this.props.history.push(this.props.location.state.from.pathname)
+            } else {
+                this.props.history.push('/');
+            }
         }
     };
 }

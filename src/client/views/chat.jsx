@@ -16,8 +16,7 @@ export class Chat extends React.Component {
     componentDidMount() {
 
 
-        this.socket = new WebSocket("ws://" + window.location.host)
-
+        this.socket = new WebSocket("ws://" + window.location.host + "/")
         this.socket.onmessage = (event => {
             const msgList = JSON.parse(event.data);
 
@@ -76,6 +75,7 @@ export class Chat extends React.Component {
                 <h2>Talk with a chef!</h2>
                 <p>Do you have any questions about the weeks menu? If you do this is the place to ask!</p>
                 <input type="text"
+                       id={"usernameChat"}
                        className={"input-field"}
                        placeholder={this.state.username}
                        value={this.state.username}
@@ -85,10 +85,13 @@ export class Chat extends React.Component {
 
                 <p>Your message:</p>
                 <textarea
+                    id={"chatMessage"}
                     placeholder={"Your message .."}
                     className="big-input" value={this.state.ingredients}
                     onChange={value => this.updateChatMessage(value)}/>
-                <button onClick={() => this.sendMsg()}>Send message!</button>
+                <button
+                    id={"sendMessage"}
+                    onClick={() => this.sendMsg()}>Send message!</button>
                 {messages}
             </div>
         )

@@ -135,7 +135,7 @@ app.post('/api/cafeteriaMenu', (req, res) => {
 })
 
 app.put('/api/cafeteriaMenu/:id', (req, res) => {
-    if(req.params.id !== req.body.id){
+    if(parseInt(req.params.id) !== req.body.id){
         res.status(409);
         res.send();
         return;

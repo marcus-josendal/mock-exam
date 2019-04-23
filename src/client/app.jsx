@@ -7,9 +7,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import AddMenuItem from "./views/add-menu-item"
 import EditMenuItem from "./views/edit-menu-item"
 import Chat from "./views/chat"
+import PrivateRoute from './components/private-route'
 
 class App extends React.Component {
-
     constructor(props) {
         super(props);
 
@@ -91,8 +91,8 @@ class App extends React.Component {
                                                         fetchAndUpdateUserInfo={this.fetchAndUpdateUserInfo}/>}/>
                         <Route exact path="/chat" render={props => <Chat {...props}
                                                                          user={this.state.user}/>}/>
-                        <Route exact path="/add-menu-item" component={AddMenuItem}/>
-                        <Route exact path="/edit-menu-item/:id" component={EditMenuItem}/>
+                        <PrivateRoute exact path="/add-menu-item" user={this.state.user} render={props => <AddMenuItem {...props} />}/>
+                        <PrivateRoute exact path="/edit-menu-item/:id" user={this.state.user} render={props => <EditMenuItem {...props} />}/>
                         <Route component={this.notFound}/>
                     </Switch>
                 </div>

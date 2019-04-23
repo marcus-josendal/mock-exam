@@ -63,9 +63,8 @@ test("Test update dish", async () => {
     expect(resGet.statusCode).toBe(200);
     expect(resGet.body.dish).toBe(dish);
 
-    const id = location.substring(location.lastIndexOf("/")+1, location.length);
+    const id = parseInt(location.substring(location.lastIndexOf("/")+1, location.length));
     const modifiedTitle = "Another dish"
-
     const resPut = await request(app)
         .put(location)
         .send({id: id, dishName: modifiedTitle, ingredientsList:["hello, hello"], allergiesList: ["hello, hello"], price: 100})
